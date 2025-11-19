@@ -15,6 +15,10 @@
     <!-- Heroicons -->
     <script src="https://unpkg.com/heroicons@2.0.18/24/outline/index.js" type="module"></script>
     
+    <!-- Swiper (Carousel) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+    
     <!-- Custom Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -132,6 +136,70 @@
             .timeline-step::before {
                 left: 20px;
             }
+        }
+        
+        /* Testimonials Carousel - design tweaks */
+        #testimonials-swiper { overflow: hidden; }
+        #testimonials-swiper .swiper-wrapper { align-items: stretch; }
+        #testimonials-swiper .swiper-slide { display: flex; } /* allow child card to stretch */
+        .testimonial-card { height: 380px; width: 100%; } /* default, will be equalized via JS */
+        .testimonial-card--center { justify-content: center; align-items: flex-start; }
+        /* Tablet sizing */
+        @media (max-width: 1023.98px) { #testimonials-swiper .swiper-slide { width: auto; } }
+        /* Mobile sizing - full width slide */
+        @media (max-width: 639.98px) { #testimonials-swiper .swiper-slide { width: 100%; } }
+        .testimonial-text {
+            flex: 1 1 auto;
+            overflow: auto;                 /* internal scroll if text overflows */
+            padding-right: 2px;             /* avoid scrollbar overlapping text */
+        }
+        /* Optional: subtle scrollbar styling (WebKit) */
+        .testimonial-text::-webkit-scrollbar {
+            width: 6px;
+        }
+        .testimonial-text::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.15);
+            border-radius: 9999px;
+        }
+        /* Swiper navigation arrows - smaller, purple, no borders */
+        #testimonials-swiper .swiper-button-prev,
+        #testimonials-swiper .swiper-button-next {
+            color: #4e2d6b;
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        /* Place arrows outside the cards area */
+        /* Place arrows clearly outside the cards area on desktop */
+        #testimonials-swiper .swiper-button-prev { left: -40px; }
+        #testimonials-swiper .swiper-button-next { right: -40px; }
+        @media (max-width: 768px) {
+            #testimonials-swiper .swiper-button-prev,
+            #testimonials-swiper .swiper-button-next { display: none; }
+        }
+        #testimonials-swiper .swiper-button-prev::after,
+        #testimonials-swiper .swiper-button-next::after {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        /* Swiper pagination dots - smaller, theme colors */
+        #testimonials-swiper .swiper-pagination {
+            position: static;
+            margin-top: 28px; /* space below cards */
+            text-align: center;
+        }
+        #testimonials-swiper .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: rgba(78, 45, 107, 0.3);
+            opacity: 1;
+        }
+        #testimonials-swiper .swiper-pagination-bullet-active {
+            background: #4e2d6b;
         }
     </style>
 </head>
@@ -402,45 +470,86 @@
                     Famiglie che hanno ottenuto giustizia con noi
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg">
-                        <div class="flex mb-4">
-                            <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                <!-- Swiper Carousel -->
+                <div id="testimonials-swiper" class="swiper" aria-roledescription="carousel" aria-label="Carosello testimonianze">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl p-8 shadow-lg h-full flex flex-col testimonial-card">
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <blockquote class="text-gray-700 mb-6 italic testimonial-text">
+                                    "Dopo l'intervento al ginocchio di mio padre, si è sviluppata un'infezione che i medici hanno sottovalutato. Centro Risarcimento Salute non solo ci ha aiutato a ottenere giustizia, ma Diana ci ha chiamati personalmente ogni settimana. Sono stati al nostro fianco nei momenti più difficili, quando non sapevamo più a chi rivolgerci."
+                                </blockquote>
+                                <div class="font-semibold text-gray-900 mt-auto">Maria T. - Bari</div>
+                            </div>
                         </div>
-                        <blockquote class="text-gray-700 mb-6 italic">
-                            "Dopo l'intervento al ginocchio di mio padre, si è sviluppata un'infezione che i medici hanno sottovalutato. 
-                            Centro Risarcimento Salute non solo ci ha ottenuto un risarcimento di 180.000€, ma Diana ci ha chiamati 
-                            personalmente ogni settimana. Sono stati al nostro fianco nei momenti più difficili, quando non sapevamo più a chi rivolgerci."
-                        </blockquote>
-                        <div class="font-semibold text-gray-900">Maria T. - Bari</div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg">
-                        <div class="flex mb-4">
-                            <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl p-8 shadow-lg h-full flex flex-col testimonial-card">
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <blockquote class="text-gray-700 mb-6 italic testimonial-text">
+                                    "Durante il parto è successo l'impensabile. A causa di negligenze mediche, il nostro bambino ha riportato danni permanenti. Sono stati gli unici a dirci la verità fin dall'inizio e a lottare davvero per noi, senza mai perdere la speranza. Dopo 18 mesi di battaglia insieme, abbiamo finalmente ottenuto il risarcimento che meritavamo."
+                                </blockquote>
+                                <div class="font-semibold text-gray-900 mt-auto">Alessandra M. - Lecce</div>
+                            </div>
                         </div>
-                        <blockquote class="text-gray-700 mb-6 italic">
-                            "Durante il parto è successo l'impensabile. A causa di negligenze mediche, il nostro bambino ha riportato danni permanenti. 
-                            Sono stati gli unici a dirci la verità fin dall'inizio e a lottare davvero per noi, senza mai perdere la speranza. 
-                            Risarcimento di 420.000€ dopo 18 mesi di battaglia insieme."
-                        </blockquote>
-                        <div class="font-semibold text-gray-900">Alessandra M. - Lecce</div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="bg-white rounded-xl p-8 shadow-lg">
-                        <div class="flex mb-4">
-                            <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl p-8 shadow-lg h-full flex flex-col testimonial-card">
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <blockquote class="text-gray-700 mb-6 italic testimonial-text">
+                                    "Dopo la diagnosi tardiva di tumore di mia madre, abbiamo cercato giustizia per anni senza successo. Centro Risarcimento Salute ha dimostrato la negligenza medica e ci ha aiutato a ottenere il giusto risarcimento. La loro competenza e il supporto umano ci hanno dato la forza di continuare."
+                                </blockquote>
+                                <div class="font-semibold text-gray-900 mt-auto">Francesco R. - Potenza</div>
+                            </div>
                         </div>
-                        <blockquote class="text-gray-700 mb-6 italic">
-                            "Dopo la diagnosi tardiva di tumore di mia madre, abbiamo cercato giustizia per anni senza successo. 
-                            Centro Risarcimento Salute ha dimostrato la negligenza medica e ci ha ottenuto un risarcimento di 280.000€. 
-                            La loro competenza e il supporto umano ci hanno dato la forza di continuare."
-                        </blockquote>
-                        <div class="font-semibold text-gray-900">Francesco R. - Potenza</div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl p-8 shadow-lg h-full flex flex-col testimonial-card">
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <blockquote class="text-gray-700 mb-6 italic testimonial-text">
+                                    "Dopo un grave errore chirurgico durante un intervento di routine, non sapevo a chi rivolgermi. La Dott.ssa Castellano ha analizzato tutta la documentazione sanitaria con estrema professionalità e mi ha seguito passo dopo passo. Grazie al loro intervento ho ottenuto un risarcimento adeguato che mi ha permesso di affrontare le cure necessarie. La loro competenza in ambito di responsabilità medica è davvero eccezionale."
+                                </blockquote>
+                                <div class="font-semibold text-gray-900 mt-auto">Giuseppe L. - Taranto</div>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl p-8 shadow-lg h-full flex flex-col testimonial-card">
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <blockquote class="text-gray-700 mb-6 italic testimonial-text">
+                                    "Mia moglie ha subito un'infezione nosocomiale grave dopo un intervento programmato. I medici dell'ospedale minimizzavano, ma noi sapevamo che qualcosa non andava. Centro Risarcimento Salute ha dimostrato la violazione dei protocolli sanitari e abbiamo finalmente ottenuto giustizia. La prima consulenza gratuita ci ha convinto della serietà del loro operato. Consiglio vivamente i loro servizi."
+                                </blockquote>
+                                <div class="font-semibold text-gray-900 mt-auto">Antonio e Laura B. - Brindisi</div>
+                            </div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-xl p-8 shadow-lg h-full flex flex-col testimonial-card">
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <blockquote class="text-gray-700 mb-6 italic testimonial-text">
+                                    "Per tre anni ho convissuto con dolori inspiegabili dopo un intervento ortopedico. Nessuno mi credeva finché una nuova radiografia ha rivelato materiale chirurgico dimenticato. Ero disperata e non sapevo come procedere legalmente. La Dott.ssa Castellano ha gestito tutto con una professionalità incredibile, ottenendo per me il giusto risarcimento in fase stragiudiziale. Finalmente ho potuto rifarmi una vita. Grazie di cuore."
+                                </blockquote>
+                                <div class="font-semibold text-gray-900 mt-auto">Claudia S. - Foggia</div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Navigation and Pagination -->
+                    <div class="swiper-button-prev" aria-label="Recensioni precedenti"></div>
+                    <div class="swiper-button-next" aria-label="Recensioni successive"></div>
+                    <div class="swiper-pagination" aria-label="Indicatori carosello"></div>
                 </div>
             </div>
         </section>
@@ -819,6 +928,54 @@
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
+
+        // Swiper - Testimonials Carousel
+        (function initTestimonialsSwiper() {
+            const el = document.getElementById('testimonials-swiper');
+            if (!el || typeof Swiper === 'undefined') return;
+            const swiper = new Swiper('#testimonials-swiper', {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 16,
+                loop: true,
+                grabCursor: true,
+                keyboard: { enabled: true },
+                autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+                pagination: { el: '#testimonials-swiper .swiper-pagination', clickable: true },
+                navigation: { nextEl: '#testimonials-swiper .swiper-button-next', prevEl: '#testimonials-swiper .swiper-button-prev' },
+                breakpoints: {
+                    640: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 24 }
+                }
+            });
+            
+            // Equalize testimonial card heights to the tallest
+            function equalizeTestimonialHeights() {
+                const cards = Array.from(document.querySelectorAll('#testimonials-swiper .testimonial-card'));
+                if (!cards.length) return;
+                // Reset heights to natural for measurement
+                cards.forEach(c => { c.style.height = 'auto'; c.classList.remove('testimonial-card--center'); });
+                // Compute max height
+                const max = cards.reduce((acc, c) => Math.max(acc, c.scrollHeight), 0);
+                // Apply max height and center shorter contents vertically
+                cards.forEach(c => {
+                    c.style.height = max + 'px';
+                    // If this card content is significantly shorter, center vertically
+                    if (c.scrollHeight < max * 0.8) {
+                        c.classList.add('testimonial-card--center');
+                    }
+                });
+            }
+            
+            // Run after init and on changes
+            equalizeTestimonialHeights();
+            window.addEventListener('resize', () => {
+                // Debounce via rAF
+                if (window.__eqTestRaf) cancelAnimationFrame(window.__eqTestRaf);
+                window.__eqTestRaf = requestAnimationFrame(equalizeTestimonialHeights);
+            });
+            swiper.on('slideChangeTransitionEnd', equalizeTestimonialHeights);
+        })();
 
         // Invio form CTA home a Make webhook senza lasciare la pagina
         (function () {
