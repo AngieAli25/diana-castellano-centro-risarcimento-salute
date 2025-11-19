@@ -314,3 +314,48 @@ ERRORI IN PRONTO SOCCORSO
 Triage inappropriato: Sottovalutazione della gravità con assegnazione di codici di priorità inadeguati rispetto al quadro clinico presentato dal paziente.
 Dimissioni premature: Dimissione di pazienti con sintomatologia non completamente inquadrata o stabilizzata, senza adeguati accertamenti diagnostici necessari.
 Mancato riconoscimento di urgenze: Omessa diagnosi di patologie tempo-dipendenti come infarto miocardico, ictus cerebrale, embolia polmonare, addome acuto chirurgico e trauma cranico.
+
+I NOSTRI SUCCESSI
+La nostra esperienza pluriennale ci ha consentito di assistere centinaia di pazienti vittime di malasanità, ottenendo risarcimenti significativi prevalentemente in fase stragiudiziale. Di seguito alcuni casi emblematici che testimoniano l'efficacia del nostro metodo e la competenza del nostro team medico-legale.
+
+CASO 1: Dimenticanza di materiale chirurgico
+Paziente: Donna, 75 anni
+Intervento: Isterectomia radicale con annessiectomia bilaterale e linfoadenectomia pelvica
+Problematica: A seguito dell'intervento chirurgico, la paziente lamentava persistenti dolori addominali e sintomatologie anomale. L'esame TC addome-pelvi evidenziava la presenza di corpo estraneo radiopaco di circa 22 cm nel cavo peritoneale, riferibile a garze dimenticate durante l'intervento chirurgico.
+Responsabilità accertata: Grave negligenza per dimenticanza di materiale chirurgico nel cavo addominale
+Risarcimento ottenuto: €33.000 Modalità: Fase stragiudiziale
+
+CASO 2: Exeresi tumorale incompleta
+Paziente: Uomo, 78 anni
+Intervento: Asportazione di epitelioma della guancia sinistra in regime di day surgery
+Problematica: Si verificava recidiva neoplastica precoce che rendeva necessario ulteriore intervento in regime di ricovero ordinario. La condizione clinica peggiorava notevolmente con compromissione della funzionalità oculare sinistra.
+Responsabilità accertata: Imperizia per incompleta rimozione della massa tumorale durante il primo intervento
+Risarcimento ottenuto: €132.000 Modalità: Fase stragiudiziale
+
+CASO 3: Mancato riconoscimento di lesione cerebrale
+Paziente: Uomo, 40 anni
+Esame diagnostico: Risonanza magnetica encefalo, cervello, tronco encefalico e massiccio facciale
+Problematica: Il paziente presentava episodi ricorrenti e progressivamente più frequenti di diplopia. La prima RMN non evidenziava alterazioni patologiche. Persistendo la sintomatologia, il paziente si rivolgeva ad altra struttura dove nuova RMN certificava presenza di cordoma del diametro di 2 cm, confermato dall'esame istologico post-operatorio.
+Responsabilità accertata: Errore diagnostico per mancato riconoscimento di neoformazione evidente agli esami strumentali
+Risarcimento ottenuto: €23.000 Modalità: Fase stragiudiziale
+
+CASO 4: Inadeguata profilassi antitrombotica
+Paziente: Donna, 56 anni
+Intervento: Isterectomia totale con annessiectomia bilaterale per utero fibromatoso menometrorragico
+Problematica: Prima dell'intervento, consulenza specialistica presso Centro Trombosi indicava specifico schema terapeutico: Seleparina 0,6 ml bis in die nel post-operatorio. Alla dimissione, disattendendo le indicazioni dello specialista ematologo, veniva prescritta monoterapia con eparina calcica. Il giorno successivo ricovero in codice rosso per disturbo di circolo cerebrale, con esito in emiparesi sinistra da infarto cerebrale. La paziente non ha recuperato la piena funzionalità degli arti.
+Responsabilità accertata: Negligenza e imprudenza per mancata osservazione dello schema posologico specialistico
+Risarcimento ottenuto: €180.000 Modalità: Fase stragiudiziale
+
+CASO 5: Omessa prosecuzione iter diagnostico oncologico
+Paziente: Uomo, 52 anni
+Intervento: Rimozione di voluminoso oncocitoma del lobo tiroideo sinistro
+Problematica: Alla dimissione veniva comunicato che sarebbe stato riconvocato per prosecuzione iter diagnostico-terapeutico. La struttura ospedaliera non riconvocava mai il paziente. Insorgenza di noduli polmonari multipli bilaterali e recidiva tiroidea. Necessità di numerosi cicli di radioterapia e ulteriore intervento di tiroidectomia totale.
+Responsabilità accertata: Negligenza per omessa prosecuzione iter diagnostico con compromissione della prognosi
+Risarcimento ottenuto: €182.000 Modalità: Fase stragiudiziale
+
+CASO 6: Infezione nosocomiale da Pseudomonas Aeruginosa
+Paziente: Uomo, 41 anni
+Intervento: Rimozione mezzi di sintesi e posizionamento artroprotesi totale ginocchio destro per gonartrosi
+Problematica: Dopo pochi mesi deiscenza della ferita chirurgica con abbondante perdita siero-ematica. Nonostante evidente infezione protesica con grave deficit deambulatorio e dolori lancinanti, veniva eseguita solo toilette e plastica cutanea. Gli esami colturali documentavano positività al Pseudomonas Aeruginosa, patogeno nosocomiale. Nonostante ripetuti interventi di revisione, progressivo peggioramento fino a necessità di amputazione della coscia.
+Responsabilità accertata: Negligenza per violazione dei protocolli di prevenzione delle infezioni nosocomiali in ambito chirurgico
+Risarcimento ottenuto: €257.000 Modalità: Fase stragiudiziale
