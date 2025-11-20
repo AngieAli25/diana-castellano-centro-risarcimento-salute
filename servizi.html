@@ -97,6 +97,11 @@
             .accordion-toggle { padding: 1rem; flex-direction: column; align-items: flex-start; }
             .accordion-title { font-size: 1.1rem; }
             .accordion-amount { font-size: 1.4rem; }
+            /* Infezioni Nosocomiali - mobile compact spacing */
+            .infezioni-nosocomiali-section { padding-top: 20px !important; padding-bottom: 20px !important; }
+            .infezioni-nosocomiali-section h2 { margin-bottom: 12px !important; }
+            .infezioni-nosocomiali-section p { margin-bottom: 8px !important; }
+            .infezioni-nosocomiali-section .gap-\[60px\] { gap: 12px !important; }
         }
     </style>
 </head>
@@ -236,7 +241,7 @@
                 <!-- 3. INFEZIONI NOSOCOMIALI -->
             </div>
             <div class="w-full" style="background-color: #ffffff;">
-                <div class="max-w-[1400px] mx-auto py-20 md:py-24 px-6 area-card flex flex-col justify-center">
+                <div class="max-w-[1400px] mx-auto py-20 md:py-24 px-6 area-card flex flex-col justify-center infezioni-nosocomiali-section">
                     <div class="relative z-10 flex flex-col lg:flex-row items-center gap-[60px]">
                         <div class="lg:w-[60%]">
                             <h2 style="font-size: 25px; font-weight: 700; color: #4e2d6b; margin-bottom: 1.5rem;">INFEZIONI NOSOCOMIALI</h2>
@@ -661,6 +666,11 @@
             if (!cards.length) return;
             // Reset heights to allow natural measurement
             cards.forEach(card => { card.style.minHeight = ''; });
+            // Only equalize on desktop/tablet to avoid extra whitespace on mobile
+            const isDesktop = window.innerWidth >= 769;
+            if (!isDesktop) {
+                return; // keep natural heights on mobile
+            }
             const maxHeight = cards.reduce((max, card) => Math.max(max, card.clientHeight), 0);
             cards.forEach(card => { card.style.minHeight = maxHeight + 'px'; });
         }
