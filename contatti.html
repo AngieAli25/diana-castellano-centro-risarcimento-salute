@@ -237,7 +237,7 @@
                             <h3 class="text-2xl font-bold mb-6 text-center" style="color: #4e2d6b; font-family: 'Poppins', sans-serif;">
                                 Richiedi una consulenza gratuita
                             </h3>
-                            <form id="contact-form" class="space-y-4" action="https://hook.eu2.make.com/68sp912c7pll2gsqc3cuvyztufawknmc" method="POST">
+                            <form id="contact-form" class="space-y-4" action="https://hook.eu2.make.com/o8ukpy2130jda61yfz9l891mp3bhv05r" method="POST">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label for="nome" class="block text-sm font-semibold mb-2" style="color: #4e2d6b; font-family: 'Poppins', sans-serif;">Nome</label>
@@ -413,7 +413,7 @@
             });
         }
 
-        // Form handling -> invio a Make webhook senza lasciare la pagina
+        // Form handling -> invio JSON a Make webhook senza lasciare la pagina
         (function () {
             const form = document.getElementById('contact-form');
             if (!form) return;
@@ -422,10 +422,17 @@
                 const submitButton = form.querySelector('button[type="submit"]');
                 try {
                     if (submitButton) submitButton.disabled = true;
-                    const formData = new FormData(form);
-                    const response = await fetch(form.action, {
+                    const payload = {
+                        nome: (form.nome?.value || '').trim(),
+                        cognome: (form.cognome?.value || '').trim(),
+                        email: (form.email?.value || '').trim(),
+                        "numero di telefono": (form.telefono?.value || '').trim(),
+                        messaggio: (form.messaggio?.value || '').trim(),
+                    };
+                    const response = await fetch('https://hook.eu2.make.com/o8ukpy2130jda61yfz9l891mp3bhv05r', {
                         method: 'POST',
-                        body: formData,
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload),
                         mode: 'cors',
                     });
                     // Consideriamo qualsiasi 2xx come successo
