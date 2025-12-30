@@ -684,7 +684,7 @@
                             <h3 class="text-2xl font-bold mb-6 text-center" style="color: #4e2d6b; font-family: 'Poppins', sans-serif;">
                                 Richiedi una consulenza gratuita
                             </h3>
-                            <form id="contact-form-home" class="space-y-4" action="https://hook.eu2.make.com/o8ukpy2130jda61yfz9l891mp3bhv05r" method="POST">
+                            <form id="contact-form-home" class="space-y-4" onsubmit="return false;">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label for="nome" class="block text-sm font-semibold mb-2" style="color: #4e2d6b; font-family: 'Poppins', sans-serif;">Nome</label>
@@ -1010,16 +1010,22 @@
                         body: JSON.stringify(payload),
                         mode: 'cors',
                     });
-                    if (response.ok || response.status === 0) {
-                        alert('Messaggio inviato con successo! Ti contatteremo presto.');
-                        form.reset();
+                    // Reindirizza sempre alla pagina di ringraziamento dopo l'invio
+                    // anche se la risposta non è perfetta, per non perdere il lead
+                    if (response.ok || response.status === 0 || response.status >= 200) {
+                        window.location.href = 'thank-you-page.html';
                     } else {
-                        alert('Si è verificato un problema nell’invio. Riprova tra qualche istante.');
+                        // In caso di errore esplicito, reindirizza comunque dopo un breve delay
+                        setTimeout(function() {
+                            window.location.href = 'thank-you-page.html';
+                        }, 500);
                     }
                 } catch (err) {
-                    alert('Si è verificato un problema di connessione. Riprova tra qualche istante.');
-                } finally {
-                    if (submitButton) submitButton.disabled = false;
+                    // Anche in caso di errore di rete, reindirizza alla pagina di ringraziamento
+                    // per non perdere il lead (i dati potrebbero comunque essere stati inviati)
+                    setTimeout(function() {
+                        window.location.href = 'thank-you-page.html';
+                    }, 500);
                 }
             });
         })();
